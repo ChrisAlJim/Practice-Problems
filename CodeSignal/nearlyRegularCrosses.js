@@ -77,7 +77,7 @@ const bruteSolution = (matrix) => {
           break
         }
       }
-      //check if each element of column is the same
+      //check if each element in column of cross is the same
       if (flag === true) {
         let j = 0
         while (j < matrix.length) {

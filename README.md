@@ -2,6 +2,7 @@
 This is meant to track my progress with coding questions.
 
 ## CodeSignal
+- [colorTheLine4](https://github.com/ChrisAlJim/Practice-Problems/tree/main/CodeSignal/colorTheLine4.js)
 - [nearlyRegularCrosses](https://github.com/ChrisAlJim/Practice-Problems/tree/main/CodeSignal/nearlyRegularCrosses.js)
 
 ## LeetCode

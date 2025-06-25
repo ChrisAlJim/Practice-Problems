@@ -1,17 +1,26 @@
-let px = 200
-let direction = "left"
+let px = 25
+let py = 50
+let dirx = "left"
+let diry = "down"
 
 const setPosition = () => {
   const spinny = document.getElementById("spinny")
-  if (px === 200) {
-    direction = "right"
-  } else if (px === 400) {
-    direction = "left"
+  if (px === 25) {
+    dirx = "right"
+  } else if (px === 75) {
+    dirx = "left"
+  }
+  if (py === 25) {
+    diry = "down"
+  } else if (py === 75) {
+    diry = "up"
   }
 
-  (direction === "left") ? px -- : px ++
+  (dirx === "left") ? px -- : px ++
+  (diry === "up") ? py -- : py ++
 
-  spinny.style.left = px + "px"
+  spinny.style.left = px + "%"
+  spinny.style.bottom = py + "%"
 }
 
 setInterval(setPosition, 16)

@@ -16,5 +16,6 @@ var invertTree = function(node) {
 };
 
 /*
-
+Time Complexity: O(n)
+Space Complexity: O(h) h = height of tree
 */

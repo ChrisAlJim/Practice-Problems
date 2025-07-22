@@ -3,7 +3,9 @@ This is meant to track my progress with coding questions.
 
 ## CodeSignal
 - [colorTheLine4](CodeSignal/colorTheLine4.js)
+- [journeyReconstruction](CodeSignal/journeyReconstruction.js)
 - [nearlyRegularCrosses](CodeSignal/nearlyRegularCrosses.js)
+- [wordSkeleton](CodeSignal/wordSkeleton.js)
 
 ## Frontend
 - [Robinhhood Forgot Password Clone](Frontend/Robinhood-Forgot-Password-Clone)

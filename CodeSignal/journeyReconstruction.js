@@ -60,8 +60,9 @@ const bruteJourneyReconstruction = () => {
       }
     }
   }
+  return path
 }
 
 
 const travelPhotos = [[3, 5], [1, 4], [2, 4], [1, 5]]
-journeyReconstruction(travelPhotos)
+console.log(bruteJourneyReconstruction(travelPhotos))

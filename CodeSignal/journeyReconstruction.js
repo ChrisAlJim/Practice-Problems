@@ -29,7 +29,7 @@ was [3, 5, 1, 4, 2].
 The reverse journey [2, 4, 1, 5, 3] is also a valid answer.
 */
 
-const bruteJourneyReconstruction = () => {
+const bruteJourneyReconstruction = (travelPhotos) => {
   const adjancencyList = new Map()
   for (const photo of travelPhotos) {
     const [id1, id2] = photo;

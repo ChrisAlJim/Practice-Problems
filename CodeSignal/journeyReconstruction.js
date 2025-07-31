@@ -64,5 +64,55 @@ const bruteJourneyReconstruction = (travelPhotos) => {
 }
 
 
+
+const journeyReconstruction = (travelPhotos) => {
+  //map which points are connected to each other
+  const adjancencyList = makeAdjacenceyList(travelPhotos)
+  //find where a point only points to one other point, this
+  //will be our starting point to build the path
+  const startingPoint = findStartingPoint(adjancencyList)
+  //construct path based on pointers in adjancencyList
+  const path = createPath(startingPoint, adjancencyList)
+
+  return path
+
+  function makeAdjacenceyList (array) {
+    const adjancencyList = new Map()
+    for (const tuple of array) {
+      const [id1, id2] = tuple;
+      (adjancencyList.has(id1)) ? adjancencyList.get(id1).push(id2) : adjancencyList.set(id1, [id2]);
+      (adjancencyList.has(id2)) ? adjancencyList.get(id2).push(id1) : adjancencyList.set(id2, [id1]);
+    }
+    return adjancencyList
+  }
+
+  function findStartingPoint (map) {
+    for (const [key, value] of map) {
+      if (value.length === 1) {
+        return key
+      }
+    }
+  }
+
+  function createPath (startingPoint, adjancencyList) {
+    const path = [startingPoint]
+    const visited = new Set([startingPoint])
+    while (path.length < adjancencyList.size) {
+      const cur = path.at(-1)
+      for (const id of adjancencyList.get(cur)) {
+        if (!(visited.has(id))) {
+          path.push(id)
+          visited.add(id)
+          break
+        }
+      }
+    }
+    return path
+  }
+}
+
+
+
 const travelPhotos = [[3, 5], [1, 4], [2, 4], [1, 5]]
 console.log(bruteJourneyReconstruction(travelPhotos))
+console.log(journeyReconstruction(travelPhotos))

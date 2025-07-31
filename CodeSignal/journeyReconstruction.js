@@ -66,29 +66,56 @@ const bruteJourneyReconstruction = (travelPhotos) => {
 
 
 const journeyReconstruction = (travelPhotos) => {
-  //map which points are connected to each other
+  if (travelPhotos.length === 0) {
+    console.log("No travel photos")
+    return []
+  }
+  //map which node point to each other
   const adjancencyList = makeAdjacenceyList(travelPhotos)
-  //find where a point only points to one other point, this
+
+  if (!adjancencyList) return
+  //find where a node only has one edge, this
   //will be our starting point to build the path
   const startingPoint = findStartingPoint(adjancencyList)
-  //construct path based on pointers in adjancencyList
+  //construct path based nodes in adjancencyList
   const path = createPath(startingPoint, adjancencyList)
 
   return path
 
   function makeAdjacenceyList (array) {
     const adjancencyList = new Map()
+    const extras = new Set()
     for (const tuple of array) {
       const [id1, id2] = tuple;
-      (adjancencyList.has(id1)) ? adjancencyList.get(id1).push(id2) : adjancencyList.set(id1, [id2]);
-      (adjancencyList.has(id2)) ? adjancencyList.get(id2).push(id1) : adjancencyList.set(id2, [id1]);
+      if (adjancencyList.has(id1)) {
+        adjancencyList.get(id1).add(id2)
+        extras.delete(id1)
+      } else {
+        adjancencyList.set(id1, new Set([id2]))
+        extras.add(id1)
+      }
+      if (adjancencyList.has(id2)) {
+        adjancencyList.get(id2).add(id1)
+        extras.delete(id2)
+      } else {
+        adjancencyList.set(id2, new Set([id1]))
+        extras.add(id2)
+      } 
+    }
+    if (extras.size > 2) {
+      console.log("There are more then 2 end points in our travel photos")
+      return
+    }
+    if (extras.size < 2) {
+      console.log("The path is loops in on itself")
+      return
     }
     return adjancencyList
   }
 
   function findStartingPoint (map) {
     for (const [key, value] of map) {
-      if (value.length === 1) {
+      if (value.size === 1) {
         return key
       }
     }
@@ -114,5 +141,10 @@ const journeyReconstruction = (travelPhotos) => {
 
 
 const travelPhotos = [[3, 5], [1, 4], [2, 4], [1, 5]]
-console.log(bruteJourneyReconstruction(travelPhotos))
+const greaterThan2Endpoints = [[3, 5], [1, 4], [2, 4], [1, 5], [1, 7]]
+const loop = [[3, 5], [1, 4], [5, 4], [1, 5]]
+// console.log(bruteJourneyReconstruction(travelPhotos))
+console.log(journeyReconstruction([]))
 console.log(journeyReconstruction(travelPhotos))
+console.log(journeyReconstruction(greaterThan2Endpoints))
+console.log(journeyReconstruction(loop))

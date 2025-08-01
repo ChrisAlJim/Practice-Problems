@@ -23,9 +23,13 @@ This is meant to track my progress with coding questions.
 - [1342. Number of Steps to Reduce a Number to Zero](LeetCode/1342-Number-of-Steps-to-Reduce-a-Number-to-Zero.js)
 
 ## Miscellaneous
+- [buildArrayMethods](Miscellaneous/buildArrayMethods.js)
 
 ## Mock-Interviews
 - [mock1](Mock-Interviews/mock1.js)
 
 ## NeetCode
 - [Valid Anagram](NeetCode/Valid-Anagram.js)
+
+## V-SWEP
+- [findDiffOfMin-MaxInBST](V-SWEP/findDiffOfMin-MaxInBST.js)

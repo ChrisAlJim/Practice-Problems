@@ -21,23 +21,63 @@ find difference
 return difference
 */
 
-// const findDiffInBST = (root) => {
-//     let max
-//     let min
-    
-//     function findMinOrMax (node, findingMin) {
-//         if (findingMin) {
-//             const curNode = node
-//             while (!curNode) {
-//                 if (typeOf node.val === "string") {
-                    
-//                 }
-//                 min = curNode.val
-//                 curNode = node.left
-//             }
-//         } else {
-//         }
-//     }
-    
-//     return max - min
-// }
+
+// Works only for VALID binary search trees
+const findDiffInBST = (root) => {
+  if (!root) {
+    throw new Error("Input must be a valid tree!")
+  }
+  const getMaxOrMin = (gettingMin, node) => {
+    let curNode = node
+    while (gettingMin ? curNode.left : curNode.right) {
+      curNode = gettingMin ? curNode.left : curNode.right;
+    }
+    return curNode.val
+  }
+
+  const maxVal = getMaxOrMin(false, root)
+  const minVal = getMaxOrMin(true, root)
+
+  return maxVal - minVal
+}
+
+try {
+  console.log(findDiffInBST(null))
+} catch (error) {
+  console.error(error)
+}
+
+// Works for all trees
+const findDiffInTree = (root) => {
+  if (!root) {
+    throw new Error("Input must be a valid tree!")
+  }
+  let maxVal = -Infinity
+  let minVal = Infinity
+
+  const findMaxAndMinVals = (curNode) => {
+    if (!curNode) return
+
+    if (typeof curNode.val === "number") {
+      maxVal = Math.max(maxVal, curNode.val)
+      minVal = Math.min(minVal, curNode.val)
+    }
+
+    findMaxAndMinVals(curNode.left)
+    findMaxAndMinVals(curNode.right)
+  }
+
+  findMaxAndMinVals(root)
+
+  if (maxVal === -Infinity && minVal === Infinity) {
+    throw new Error("There are no numbers in this tree!")
+  }
+
+  return maxVal - minVal
+}
+
+try {
+  console.log(findDiffInTree(null))
+} catch (error) {
+  console.error(error)
+}

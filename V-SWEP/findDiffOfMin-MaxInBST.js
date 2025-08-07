@@ -47,7 +47,7 @@ try {
   console.error(error)
 }
 
-// Works for all trees
+// Works for all binary trees
 const findDiffInTree = (root) => {
   if (!root) {
     throw new Error("Input must be a valid tree!")

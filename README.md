@@ -15,6 +15,7 @@ This is meant to track my progress with coding questions.
 - [73. Set Matrix Zeroes](LeetCode/73-Set-Matrix-Zeroes.js)
 - [102. Binary Tree Level Order Traversal](LeetCode/102-Binary-Tree-Level-Order-Traversal.js)
 - [155. Min Stack](LeetCode/155-Min-Stack.js)
+- [160. Intersection of Two Linked List](LeetCode/160-Intersection-of-Two-Linked-Lists.js)
 - [167. Two Sum II - Input Array Is Sorted](LeetCode/167-Two-Sum-II---Input-Array-Is-Sorted.js)
 - [199. Binary Tree Right Side View](LeetCode/199-Binary-Tree-Right-Side-View.js)
 - [208. Implement Trie (Prefix Trie)](LeetCode/208-Implement-Trie-(Prefix-Tree).js)
@@ -33,3 +34,4 @@ This is meant to track my progress with coding questions.
 
 ## V-SWEP
 - [findDiffOfMin-MaxInBST](V-SWEP/findDiffOfMin-MaxInBST.js)
+- [htmlTreeSearch](V-SWEP/htmlTreeSearch.txt)

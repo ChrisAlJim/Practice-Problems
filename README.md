@@ -17,6 +17,7 @@ This is meant to track my progress with coding questions.
 - [155. Min Stack](LeetCode/155-Min-Stack.js)
 - [160. Intersection of Two Linked List](LeetCode/160-Intersection-of-Two-Linked-Lists.js)
 - [167. Two Sum II - Input Array Is Sorted](LeetCode/167-Two-Sum-II---Input-Array-Is-Sorted.js)
+- [160. Majority Element](LeetCode/169-Majority-Element.js)
 - [199. Binary Tree Right Side View](LeetCode/199-Binary-Tree-Right-Side-View.js)
 - [208. Implement Trie (Prefix Trie)](LeetCode/208-Implement-Trie-(Prefix-Tree).js)
 - [226. Invert Binary Tree](LeetCode/226-Invert-Binary-Tree.js)

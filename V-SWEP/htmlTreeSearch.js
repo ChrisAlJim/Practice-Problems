@@ -40,53 +40,13 @@ Node {
 }
 */
 
-///////
-//BRUTE
-///////
-
-const bruteHTMLTreeSearch = (root, searchString) => {
-  let renderedHTMLText = ""
-
-  const indexToNodeMap = {}
-
-  const helper = (curNode) => {
-    if (curNode.isText) {
-      const preConcatLength = renderedHTMLText.length
-      renderedHTMLText = renderedHTMLText.concat(curNode.getText)
-      const postConcatLength = renderedHTMLText.length
-      if (preConcatLength !== postConcatLength) {
-        indexToNodeMap[preConcatLength] = curNode
-      }
-      return
-    }
-    curNode.getChildren.forEach((childNode) => {
-      helper(childNode)
-    })
-  }
-  helper(root)
-
-  const searchStringStartIndex = renderedHTMLText.indexOf(searchString)
-
-  const searchStringEndIndex = searchStringStartIndex + searchString.length - 1
-
-  const output = []
-
-  for (let i = searchStringStartIndex; i < searchStringEndIndex; i++) {
-    if (indexToNodeMap.has(i)) {
-      output.push(indexToNodeMap[i])
-    }
-  } 
-
-  return output
-}
-
 ///////////
 //OPTIMIZED
 ///////////
 
-const optimizedHTMLTreeSearch = (root, searchString) => {
+const findText = (root, searchString) => {
   if (!root || !searchString) {
-    throw new Error("Missing or null inputs!")
+    throw new Error("Invalid inputs!")
   }
 
   let renderedHTMLText = ""
@@ -95,7 +55,7 @@ const optimizedHTMLTreeSearch = (root, searchString) => {
 
   const htmlTextBuilder = (curNode) => {
     if (curNode.isText) {
-      const nodeText = curNode.getText;
+      const nodeText = curNode.getText()
       if (nodeText.length > 0) {
         const preConcatLength = renderedHTMLText.length
         indexToNodeMap.set(preConcatLength, curNode)
@@ -103,9 +63,9 @@ const optimizedHTMLTreeSearch = (root, searchString) => {
       }
       return
     }
+    const children = curNode.getChildren()
+    if (!children.length) return
 
-
-    const children = curNode.getChildren
     children.forEach((childNode) => {
       htmlTextBuilder(childNode)
     })
@@ -117,7 +77,7 @@ const optimizedHTMLTreeSearch = (root, searchString) => {
   const searchStringStartIndex = renderedHTMLText.indexOf(searchString)
 
   if (searchStringStartIndex === -1) {
-    return [];
+    return []
   }
 
   // Where the searchString ends (exclusive) in our renderedHTMLText
@@ -130,6 +90,6 @@ const optimizedHTMLTreeSearch = (root, searchString) => {
       output.push(node)
     }
   }
-
-  return output;
+  console.log(output)
+  return output
 }

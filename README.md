@@ -22,6 +22,7 @@ This is meant to track my progress with coding questions.
 - [208. Implement Trie (Prefix Trie)](LeetCode/208-Implement-Trie-(Prefix-Tree).js)
 - [226. Invert Binary Tree](LeetCode/226-Invert-Binary-Tree.js)
 - [232. Implement Queue using Stacks](LeetCode/232-Implement-Queue-using-Stacks.js)
+- [994. Rotting Oranges](LeetCode/994-Rotting-Oranges.js)
 - [1342. Number of Steps to Reduce a Number to Zero](LeetCode/1342-Number-of-Steps-to-Reduce-a-Number-to-Zero.js)
 
 ## Miscellaneous

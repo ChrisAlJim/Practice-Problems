@@ -53,7 +53,7 @@ const findText = (root, searchString) => {
 
   const indexToNodeMap = new Map()
 
-  const htmlTextBuilder = (curNode) => {
+  const buildHTMLText = (curNode) => {
     if (curNode.isText) {
       const nodeText = curNode.getText()
       if (nodeText.length > 0) {
@@ -67,11 +67,11 @@ const findText = (root, searchString) => {
     if (!children.length) return
 
     children.forEach((childNode) => {
-      htmlTextBuilder(childNode)
+      buildHTMLText(childNode)
     })
   }
 
-  htmlTextBuilder(root)
+  buildHTMLText(root)
 
   // Where the searchString is first found in our renderedHTMLText
   const searchStringStartIndex = renderedHTMLText.indexOf(searchString)
@@ -90,6 +90,5 @@ const findText = (root, searchString) => {
       output.push(node)
     }
   }
-  console.log(output)
   return output
 }

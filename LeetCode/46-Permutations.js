@@ -26,3 +26,71 @@ const permute = (nums) => {
   }
   return buildPermutations([], [])
 }
+
+
+/*
+123
+132
+213
+231
+312
+321
+
+ 1234
+
+1
+12
+123
+1234
+12
+124
+1243
+124
+12
+13
+1
+
+
+
+1234
+1243
+1324
+1342
+1423
+1432
+
+
+1
+12
+123
+1234
+123
+124
+1243
+124
+12
+13
+1
+*/
+
+const permutew = (nums) => {
+  const available = new Set(nums)
+  const output = []
+  const helper = (curPerm, availableEles) => {
+    if (availableEles.size === 0) {
+      output.push([...curPerm])
+    }
+    
+    for (const ele of availableEles) {
+      const newAvailableEles = new Set([...availableEles])
+      newAvailableEles.delete(ele)
+      helper([...curPerm, ele], newAvailableEles)
+    }
+  }
+
+  helper([], available)
+
+  return output
+}
+
+console.log(permutew([1,2,3]))

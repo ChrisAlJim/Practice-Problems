@@ -13,7 +13,7 @@ combinations that sum up to target is less than 150 combinations
 for the given input.
 */
 
-const combinationSum = function(candidates, target) {
+const combinationSum = (candidates, target) => {
     const output = []
 
     const buildCombinations = (index, curCombination, curTotal) => {

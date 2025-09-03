@@ -12,6 +12,7 @@ This is meant to track my progress with coding questions.
 
 ## LeetCode
 - [22. Generate Parentheses](LeetCode/22-Generate-Parentheses.js)
+- [39. Combination Sum](LeetCode/39-Combination-Sum.js)
 - [46. Permutations](LeetCode/46-Permutations.js)
 - [54. Spiral Matrix](LeetCode/54-Spiral-Matrix.js)
 - [73. Set Matrix Zeroes](LeetCode/73-Set-Matrix-Zeroes.js)

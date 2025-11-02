@@ -17,6 +17,7 @@ This is meant to track my progress with coding questions.
 - [54. Spiral Matrix](LeetCode/54-Spiral-Matrix.js)
 - [73. Set Matrix Zeroes](LeetCode/73-Set-Matrix-Zeroes.js)
 - [102. Binary Tree Level Order Traversal](LeetCode/102-Binary-Tree-Level-Order-Traversal.js)
+- [146. LRU Cache](LeetCode/146-LRU-Cache.js)
 - [155. Min Stack](LeetCode/155-Min-Stack.js)
 - [160. Intersection of Two Linked List](LeetCode/160-Intersection-of-Two-Linked-Lists.js)
 - [167. Two Sum II - Input Array Is Sorted](LeetCode/167-Two-Sum-II---Input-Array-Is-Sorted.js)

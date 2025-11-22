@@ -3,6 +3,7 @@ This is meant to track my progress with coding questions.
 
 ## CodeSignal
 - [colorTheLine4](CodeSignal/colorTheLine4.js)
+- [findCycleInDirectedGraph](CodeSignal/findCycleInDirectedGraph.js)
 - [journeyReconstruction](CodeSignal/journeyReconstruction.js)
 - [nearlyRegularCrosses](CodeSignal/nearlyRegularCrosses.js)
 - [wordSkeleton](CodeSignal/wordSkeleton.js)
